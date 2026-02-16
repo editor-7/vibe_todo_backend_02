@@ -1,0 +1,25 @@
+■ MongoDB Compass 연결 방법
+
+1. 연결 문자열 복사
+   터미널에서 아래 명령 실행 후, 출력된 한 줄 전체를 복사하세요.
+   
+   cd e:\code_home\vibe_noona\todo_backend
+   npm run compass
+
+   (또는: node scripts/print-connection-string.js)
+
+2. Compass에서 연결
+   - MongoDB Compass 실행
+   - "New Connection" 선택
+   - 위에서 복사한 연결 문자열을 URI 입력 칸에 붙여넣기
+   - [Connect] 클릭
+
+3. 연결이 안 될 때
+   - MongoDB Atlas (https://cloud.mongodb.com) 로그인
+   - 왼쪽 메뉴 [Network Access] → [Add IP Address]
+   - "Add Current IP Address" 또는 "Allow Access from Anywhere" (0.0.0.0/0) 선택 후 저장
+   - 1~2분 후 Compass에서 다시 [Connect]
+
+4. 연결 후
+   - 왼쪽에 "todo" 데이터베이스가 보이면 성공
+   - 할일 앱에서 저장한 데이터는 todo > todos 컬렉션에 있습니다

@@ -1,0 +1,10 @@
+# Cloudtype: Node.js 서버로 인식하도록 설정 (Express 백엔드)
+name: vibe-todo-backend
+app: node@20
+options:
+  env:
+    - name: NODE_ENV
+      value: production
+  install: npm ci
+  ports: 8080/http
+  start: npm start

@@ -1,0 +1,33 @@
+# vibe_todo_backend GitHub 저장소 구조
+# (node_modules, .git 제외)
+
+index.js              ← 진입점 (Express 서버)
+package.json          ← "start": "node index.js" 있음
+package-lock.json
+.env                  ← Git 제외됨 (.gitignore)
+.gitignore
+
+models/
+  Todo.js
+  todoSchema.js
+
+routers/
+  todos.js
+
+scripts/
+  print-connection-string.js
+
+CLOUDTYPE_배포안내.md
+CLOUDTYPE_검토체크리스트.md
+CLOUDTYPE_오류해결.md
+COMPASS_연결안내.txt
+
+---
+✅ package.json scripts:
+  "start": "node index.js"
+
+✅ index.js:
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, ...);
+
+→ Express 백엔드 (Next.js 아님). Cloudtype에서 "Node.js 서버"로 새로 생성 필요.

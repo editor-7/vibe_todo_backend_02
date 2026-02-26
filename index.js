@@ -20,12 +20,12 @@ app.options('*', cors());
 
 const MONGO_URI = process.env.MONGO_URL || process.env.MONGO_URI || 'mongodb://localhost:27017/todo';
 
-// 연결 대상 확인 (비밀번호 제외하고 호스트만 표시)
+// 연결 대상 확인 (민감 정보 노출 방지)
 const isAtlas = MONGO_URI.includes('mongodb+srv://') && MONGO_URI.includes('mongodb.net');
 if (isAtlas) {
-  console.log('DB 연결 대상: Atlas (cluster0.wsuv9mb.mongodb.net) → todo DB');
+  console.log('DB 연결 대상: MongoDB Atlas (클라우드)');
 } else {
-  console.log('DB 연결 대상: localhost:27017 → todo DB (.env의 MONGO_URL을 Atlas 주소로 바꾸면 Atlas에 저장됩니다)');
+  console.log('DB 연결 대상: localhost (로컬 MongoDB)');
 }
 
 app.get('/', function (req, res) {
